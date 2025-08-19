@@ -3,15 +3,14 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  root: ".",          // frontend root
+  root: ".",
   build: {
-    outDir: "dist",   // production build folder
+    outDir: "dist",
     rollupOptions: {
-      input: "./index.html",  // ensure index.html is entry
+      input: "./index.html"
     }
   },
   server: {
-    port: 5173,
     proxy: {
       "/api": {
         target: "http://localhost:3000",
@@ -21,4 +20,5 @@ export default defineConfig({
     }
   }
 });
+
 
